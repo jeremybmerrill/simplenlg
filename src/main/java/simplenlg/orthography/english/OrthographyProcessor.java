@@ -197,6 +197,10 @@ public class OrthographyProcessor extends NLGModule {
 						}
 					}
 
+				} else if((DiscourseFunction.CUE_PHRASE.equals(function) || DiscourseFunction.FRONT_MODIFIER.equals(function))
+			   && this.commaSepCuephrase){
+					realiseList(buffer, element.getChildren(), this.commaSepCuephrase ? "," : "");
+
 				} else {
 					realiseList(buffer, element.getChildren(), "");
 				}
@@ -206,7 +210,6 @@ public class OrthographyProcessor extends NLGModule {
 
 			} else if(element instanceof CoordinatedPhraseElement) {
 				realisedElement = realiseCoordinatedPhrase(element.getChildren());
-
 			} else {
 				realisedElement = element;
 			}
