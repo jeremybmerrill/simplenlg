@@ -3,14 +3,24 @@
   	<modelVersion>4.0.0</modelVersion>
   
 	
-	<groupId>abdn</groupId>
+	<groupId>uk.ac.abdn</groupId>
 	<artifactId>SimpleNLG</artifactId>
 	<version>4.4.7-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
   	<name>SimpleNLG</name>
-  	<url>https://github.com/simplenlg/simplenlg</url>
+  	<description>Java API for Natural Language Generation</description>
+	<url>https://github.com/simplenlg/simplenlg</url>
   
+	<licenses>
+	  <license>
+	    <name>Mozilla Public License, Version 1.1</name>
+	    <url>https://www.mozilla.org/MPL/1.1/</url>
+	    <distribution>repo</distribution>
+	  </license>
+	</licenses>
+
+
   	<properties>
     	 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	</properties>
@@ -37,6 +47,18 @@
 		</dependency>    
 		
 	</dependencies>
+	
+	
+	<distributionManagement>
+	  <snapshotRepository>
+	    <id>ossrh</id>
+	    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+	  </snapshotRepository>
+	  <repository>
+	    <id>ossrh</id>
+	    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+	  </repository>
+	</distributionManagement>
   	
 	<build>
 		<plugins>

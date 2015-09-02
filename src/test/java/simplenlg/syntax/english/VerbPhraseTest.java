@@ -38,7 +38,6 @@ import simplenlg.framework.WordElement;
 import simplenlg.phrasespec.SPhraseSpec;
 import simplenlg.phrasespec.VPPhraseSpec;
 
-// TODO: Auto-generated Javadoc
 /**
  * These are tests for the verb phrase and coordinate VP classes.
  * @author agatt
@@ -93,7 +92,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
 	 * Tests for the tense and aspect.
 	 */
 	@Test
-	public void testSimplePast() {
+	public void simplePastTest() {
 		// "fell down"
 		this.fallDown.setFeature(Feature.TENSE,Tense.PAST);
 		assertEquals(
@@ -105,7 +104,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
 	 * Test tense aspect.
 	 */
 	@Test
-	public void testTenseAspect() {
+	public void tenseAspectTest() {
 		// had fallen down
 		this.realiser.setLexicon(this.lexicon);
 		this.fallDown.setFeature(Feature.TENSE,Tense.PAST);
@@ -158,7 +157,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
 	 * Test for realisation of VP complements.
 	 */
 	@Test
-	public void testComplementation() {
+	public void complementationTest() {
 
 		// was kissing Mary
 		PhraseElement mary = this.phraseFactory.createNounPhrase("Mary"); //$NON-NLS-1$
@@ -212,7 +211,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
 	 * postmodifiers.
 	 */
 	@Test
-	public void testComplementation2() {
+	public void complementationTest_2() {
 		// give the woman the dog
 		this.woman.setFeature(InternalFeature.DISCOURSE_FUNCTION,
 				DiscourseFunction.INDIRECT_OBJECT);
@@ -276,7 +275,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
 	 * Test for complements raised in the passive case.
 	 */
 	@Test
-	public void testPassiveComplement() {
+	public void passiveComplementTest() {
 		// add some arguments
 		this.dog.setFeature(InternalFeature.DISCOURSE_FUNCTION,
 				DiscourseFunction.OBJECT);
@@ -311,7 +310,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
 	 * that John was walking"
 	 */
 	@Test
-	public void testClausalComp() {
+	public void clausalComplementTest() {
 		this.phraseFactory.setLexicon(this.lexicon);
 		SPhraseSpec s = this.phraseFactory.createClause();
 
@@ -421,7 +420,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
 	 * wide-scope auxiliary</LI>
 	 */
 	@Test
-	public void testCoordination() {
+	public void coordinationTest() {
 		// simple case
 		this.kiss.addComplement(this.dog);
 		this.kick.addComplement(this.boy);
